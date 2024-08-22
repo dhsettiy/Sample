@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite" parallel="tests">
+  <test thread-count="5" name="Test">
+  <parameter name="userName" value="yuvisekar3"></parameter>
+  <parameter name="passWord" value="33CJOO"></parameter>
+    <classes>
+      <class name="com.test.data.Parameter"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="5" name="Test_one">
+  <parameter name="userName" value="yuvisekar3"></parameter>
+  <parameter name="passWord" value="33CJOO"></parameter>
+    <classes>
+      <class name="com.test.data.Parameter"/>
+    </classes>
+  </test> <!-- Test -->
+  
+</suite> <!-- Suite -->

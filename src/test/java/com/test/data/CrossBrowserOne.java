@@ -1,0 +1,62 @@
+package com.test.data;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class CrossBrowserOne {
+	public WebDriver driver;
+	@Parameters({"browser"})
+
+	@Test
+	public void crossBrowser(String browser) {
+		if (browser.equals("Chrome")) {
+			driver = new ChromeDriver();
+			driver.get("https://www.google.com/");
+		} else if (browser.equals("edge")) {
+			driver = new EdgeDriver();
+			driver.get("https://www.google.com/");
+		} else if (browser.equals("firefox")) {
+			driver = new FirefoxDriver();
+			driver.get("https://www.google.com/");
+		}
+	}
+	@Test
+	public void login() {
+		driver.get("https://adactinhotelapp.com/");
+		driver.findElement(By.id("username")).sendKeys("yuvisekar3");
+		driver.findElement(By.id("password")).sendKeys("33CJOO");
+		driver.findElement(By.id("login")).click();
+	}
+	@AfterTest
+	public void aftertest() {
+		File scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File dest = new File(System.getProperty("user.dir")+"/ScreenShot"+timestamp()+".png");
+		try {
+			FileUtils.copyFile(scr, dest);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public static String timestamp() {
+		SimpleDateFormat sm=new SimpleDateFormat("dd-MM-YYYY hh-mm-ss");
+		String format = sm.format(new Date());
+		return format;
+	}
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite" >
+  <test thread-count="5" name="Test_chrome">
+  <parameter name="browser" value="Chrome"></parameter>
+    <classes>
+      <class name="com.test.data.CrossBrowserOne"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="5" name="Test_edge">
+  <parameter name="browser" value="edge"></parameter>
+    <classes>
+      <class name="com.test.data.CrossBrowserOne"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="5" name="Test_firefox">
+  <parameter name="browser" value="firefox"></parameter>
+    <classes>
+      <class name="com.test.data.CrossBrowserOne"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

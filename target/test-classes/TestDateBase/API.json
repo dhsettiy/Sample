@@ -1,0 +1,16 @@
+{
+"squadName": "Super hero squad",
+  "homeTown": "MetroCity",
+  "formed": 2016,
+  "secretBase": "Super tower",
+  "active": true,
+   "members": [
+    {
+      "ID": "dharyna",
+      "age": 29,
+      "secretIdentity": "Dan Jukes",
+      "state": "TamilNadu",
+	  "city": "Salem"
+    }
+  ] 
+}
