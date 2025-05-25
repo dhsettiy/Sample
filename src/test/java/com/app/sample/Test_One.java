@@ -34,7 +34,7 @@ public class Test_One {
 				+ "}")
 		.when().put("/maps/api/place/update/json")
 		.then().log().all().statusCode(200).extract().asString();
-		System.out.println(getResp);
+		System.out.println(getResp+"TestingValidation");
 		
 		//Get
 		String Resp=	given().log().all().queryParam("place_id", place_id)
